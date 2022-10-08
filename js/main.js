@@ -4,13 +4,18 @@
 
 initBoard()
 initCatRow()
-buildCategories()
-document.querySelector('button').addEventListener('click', startGame)
+
+
+document.querySelector('button').addEventListener('click',buildCategories)
+
+
+
 function initCatRow(){
     let catRow = document.getElementById('category-row')
         for (let j=0; j<6; j++){
             let box = document.createElement('div')
             box.className = 'clue-box category-box'
+            box.id = `${j}`
             catRow.appendChild(box)
         }
 
@@ -41,7 +46,6 @@ function randInt(){
 }
 
 let catArray = []
-
 function buildCategories(){
     const fetchReq1 = fetch(
         `https://jservice.io/api/category?&id=${randInt()}`).then((res) => res.json())
@@ -66,7 +70,21 @@ function buildCategories(){
     allData.then((res) => {
         console.log(res)
         catArray = res
+        setCategories(catArray)
     })
+    
+}
+
+function setQuestions(catArray){
+
+}
+
+function setCategories(catArray){
+    let element = document.getElementById('category-row')
+    let children = element.children;
+    for(let i=0; i<children.length; i++){
+        children[i].innerHTML = catArray[i].title
+    }
 }
 
 function getClue(){
