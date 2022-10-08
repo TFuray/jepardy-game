@@ -75,10 +75,6 @@ function buildCategories(){
     
 }
 
-function setQuestions(catArray){
-
-}
-
 function setCategories(catArray){
     let element = document.getElementById('category-row')
     let children = element.children;
@@ -87,9 +83,20 @@ function setCategories(catArray){
     }
 }
 
-function getClue(){
-    return 0
+function getClue(event){
+    let child = event.currentTarget
+    child.classList.add('clicked-box')
+    let boxValue = child.innerHTML.slice(1)
+    let parent = child.parentNode
+    let index = Array.prototype.findIndex.call(parent.children, (c) => c === child)
+    let cluesList = catArray[index].clues
+    let clue = cluesList.find(obj => {
+        return obj.value == boxValue
+    })
+    showQuestion(clue, child, boxValue)
 }
+
+
 
 function startGame() {
 
