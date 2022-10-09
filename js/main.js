@@ -96,7 +96,13 @@ function getClue(event){
     showQuestion(clue, child, boxValue)
 }
 
-
+function showQuestion(clue, target, boxValue){
+    let userAnswer = prompt(clue.question).toLowerCase()
+    let correctAnswer = clue.answer.toLowerCase().replace(/<\/?[^>]+(>|$)/g, "")
+    let possiblePoints = +(boxValue)
+    target.innerHTML = clue.answer
+    target.removeEventListener('click', getClue, false)
+}
 
 function startGame() {
 
