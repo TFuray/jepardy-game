@@ -38,7 +38,7 @@ h1 {
 
 button {
   appearance: button;
-  background-color: #000;
+  background-color: rgb(40, 40, 40);
   background-image: none;
   border: 1px solid #000;
   border-radius: 4px;
