@@ -1,7 +1,8 @@
 /* Box Model Hack */
 * {
      box-sizing: border-box;
-     background-color: rgb(5, 100, 5);
+     background-color: rgba(59, 59, 59, 0.996);
+     color: rgb(255, 255, 255);
 }
 
 /* Clear fix hack */
@@ -36,9 +37,55 @@ h1 {
 }
 
 button {
-     font-size: 2rem;
-     margin-bottom: 15px;
+  appearance: button;
+  background-color: #000;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
 }
+
+.button:focus {
+  text-decoration: none;
+}
+
+.button:hover {
+  text-decoration: none;
+}
+
+.button:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.button:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-50 {
+    padding: 12px 50px;
+  }
+}
+
 span {
      font-size: 2rem;
      font-weight: bold;
@@ -79,7 +126,7 @@ span {
      margin: 5px;
      height: 100px;
      flex: 1;
-     background-color: rgb(11, 99, 123);
+     background-color: rgb(138, 138, 138);
      border: 2px solid white;
      font-size: 2rem;
      font-weight: bold;
