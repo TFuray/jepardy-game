@@ -1,7 +1,4 @@
 // initialize game board on load\
-
-// http://jservice.io/api/categories?&count=30
-
 initBoard()
 initCatRow()
 
